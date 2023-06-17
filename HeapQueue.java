@@ -38,6 +38,21 @@ public class HeapQueue <E extends Comparable<E>, T>{
         return this.queue.get(0);
     }
 
+    public Node<E, T> Back() {
+
+        Node<E, T> menor = this.queue.get(0);
+
+        for (int i = 1; i < this.queue.size(); i++) {
+            Node<E, T> actual = this.queue.get(i);
+
+            if (menor.getKey().compareTo(actual.getKey()) > 0) {
+                menor = actual;
+            }
+        }
+
+        return menor;
+    }
+
     public String toString() {
         String str = "";
 
