@@ -13,6 +13,7 @@ public class test {
         cola.enqueue(-1,8);
         cola.enqueue(6,8);
         cola.enqueue(3,8);
+        cola.enqueue(8,1);
 
         System.out.println(cola);
 
