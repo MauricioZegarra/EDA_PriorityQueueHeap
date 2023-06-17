@@ -52,6 +52,33 @@ public class HeapQueue <E extends Comparable<E>, T>{
 
         return menor;
     }
+    
+    public void dequeue() {
+        this.queue.set(0, this.queue.get(this.queue.size() - 1));
+        this.queue.remove(this.queue.size() - 1);
+        
+        for (int i = 0; i < this.queue.size()/2; ) {
+            int left = 2*i + 1;
+            int right = 2*i + 2;
+            int max = left;
+            
+            if (left < this.queue.size() && right < this.queue.size()) {
+                if (this.queue.get(left).getKey().compareTo(this.queue.get(right).getKey()) < 0) {
+                    max = right;
+                }
+            }
+            
+            Node<E,T> aux = new Node<E, T> (this.queue.get(max).getKey(), this.queue.get(max).getData());
+            
+            if (this.queue.get(i).getKey().compareTo(aux.getKey()) < 0) {
+                this.queue.set(max, this.queue.get(i));
+                this.queue.set(i, aux);
+            }
+                
+            i = 0;
+            i += max;
+        }
+    }
 
     public String toString() {
         String str = "";

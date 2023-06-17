@@ -16,6 +16,18 @@ public class test {
         cola.enqueue(8,1);
 
         System.out.println(cola);
+        
+        cola.dequeue();
+
+        System.out.println(cola);
+
+        cola.dequeue();
+
+        System.out.println(cola);
+
+        cola.dequeue();
+
+        System.out.println(cola);
 
         System.out.println("La mayor prioridad es de: " + cola.Front().getKey() + " y pertenece al elemento con la informacion: " + cola.Front().getData());
 
