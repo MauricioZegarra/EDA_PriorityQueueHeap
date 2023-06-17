@@ -34,6 +34,10 @@ public class HeapQueue <E extends Comparable<E>, T>{
         }
     }
 
+    public Node<E, T> Front() {
+        return this.queue.get(0);
+    }
+
     public String toString() {
         String str = "";
 
